@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>loan calculator</title>	
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<script src="script.js"></script>
+	<table>
+		<tr>
+			<th><h2>Введите данные о кредите:</h2></th>
+				<td></td>
+		</tr>
+		<tr>
+			<td>Cумма кредита (руб):</td>
+			<td><input id="amount" onchange="calculate();"></td>
+			<td rowspan=8><canvas id="graph" width="400" height="250"></canvas></td>
+		</tr>
+		<tr>
+			<td>Процентная ставка (% годовых):</td>
+			<td><input id ="apr" onchange="calculate();"></td>
+		</tr>
+		<tr>
+			<td>Срок кредита (лет):</td>
+			<td><input id="years" onchange="calculate();"></td>
+		</tr>
+		<tr>
+			<td>Тип платежа:</td>
+			<td><select name="type_of_payment">
+				<option value="annuit">аннуитетный</option>
+				<option value="differenc">дифференцированный</option></td>
+			</select>
+
+		</tr>
+		<tr>
+			<td><button onclick="calculate();">Рассчитать</button></td>
+		</tr>
+		<tr>
+			<td>Ежемесячный платеж (руб.):</td>
+			<td><span class="output" id="payment"></span></td>
+		</tr>
+		<tr>
+			<td>Сумма переплаты (%):</td>
+			<td><span class="output" id="totalinterest"></span></td>
+		</tr>
+	</table>
+	<p><h3>Справочная информация:</h3></p>
+	<p><strong>Аннуите́т</strong>(фр. annuité от лат. annuus — годовой) — общий термин,</br>описывающий график погашения финансового инструмента, когда выплаты устанавливаются</br>периодически равными суммами через равные промежутки времени.</br></p>
+	<p>Сумма аннуитетного платежа включает в себя основной долг и вознаграждение.</p>
+	<p><strong>Дифференцированный платёж</strong> — это ежемесячный платёж по кредиту,</br>уменьшающийся к концу срока кредитования. Он состоит из выплачиваемой постоянной </br>доли основного долга и процентов на невыплаченный остаток кредита.</p>
+</body>
+</html>
