@@ -1,7 +1,10 @@
 .output { 
-		font-weight: bold; 
-	} //жирный шрифт для вычисленных значений
+		font-weight: bold; //жирный шрифт для вычисленных значений
+	} 
 		#payment { text-decoration: underline; } //для элементов с id="payment"
 		#graph { border: solid grey 2px; } //простая рамка для диаграммы
 		th, td { vertical-align: top; } //выравнивание в ячейках таблицы
 
+button {
+	
+}

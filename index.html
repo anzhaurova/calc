@@ -6,7 +6,6 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<script src="script.js"></script>
 	<table>
 		<tr>
 			<th><h2>Введите данные о кредите:</h2></th>
@@ -25,11 +24,6 @@
 			<td>Срок кредита (лет):</td>
 			<td><input id="years" onchange="calculate();"></td>
 		</tr>
-		<tr>
-			<td>Тип платежа:</td>
-			<td><select name="type_of_payment">
-				<option value="annuit">аннуитетный</option>
-				<option value="differenc">дифференцированный</option></td>
 			</select>
 
 		</tr>
@@ -41,6 +35,10 @@
 			<td><span class="output" id="payment"></span></td>
 		</tr>
 		<tr>
+			<td>Общая сумма:</td>
+			<td><span class="output" id="total"></span></td>
+		</tr>
+		<tr>
 			<td>Сумма переплаты (%):</td>
 			<td><span class="output" id="totalinterest"></span></td>
 		</tr>
@@ -50,4 +48,5 @@
 	<p>Сумма аннуитетного платежа включает в себя основной долг и вознаграждение.</p>
 	<p><strong>Дифференцированный платёж</strong> — это ежемесячный платёж по кредиту,</br>уменьшающийся к концу срока кредитования. Он состоит из выплачиваемой постоянной </br>доли основного долга и процентов на невыплаченный остаток кредита.</p>
 </body>
+<script src="script.js"></script>
 </html>
