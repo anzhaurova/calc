@@ -5,7 +5,6 @@ function calculate() {
 	var apr = document.getElementById("apr");
 	var years = document.getElementById("years");
 	var payment = document.getElementById("payment");
-	var total = document.getElementById("total");
 	var totalinterest = document.getElementById("totalinterest");
 	/*получить введенные пользов-лем данные
 	преобразовать процентную ставку из процентов в десятичное число и преобр
@@ -28,7 +27,6 @@ function calculate() {
 	if (isFinite(monthly)) {
 		//заполнить поля вывода, округлив рез-ты до 2 дес знаков
 		payment.innerHTML = monthly.toFixed(2);
-		total.innerHTML = (monthly * payments).toFixed(2);
 		totalinterest.innerHTML = ((monthly*payments)-principal).toFixed(2);
 
 	//Сохранить ввод польз-ля//
@@ -39,7 +37,6 @@ function calculate() {
 	else {
 		//данные получены некорректно 
 		payment.innerHTML = ""; //стереть содержимое этих элементов
-		total.innerHTML = ""
 		totalinterest.innerHTML = "";
 	}
 }
@@ -56,9 +53,9 @@ function save(amount,apr, years) {
 window.onload = function() {
 	//если браузер поддерживает localStorage и имеются сохраненные данные
 	if (window.localStorage && localStorage.loan_amount) {
-		document.getElementById("amount").value = localStorage.loan_amount;
-		document.getElementById("apr").value = localStorage.loan_apr;
-		document.getElementById("years").value = loan_years;
+		document.getElementById("amount").value = localStorage.loan_amount; //сумма кред
+		document.getElementById("apr").value = localStorage.loan_apr; //проц ставка
+		document.getElementById("years").value = localStorage.loan_years; //срок кредита
 
 	}
 };
