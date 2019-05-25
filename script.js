@@ -1,7 +1,7 @@
 
 function calculate() {
-	//найти элементы ввода и вывода в документе
-	var amount = document.getElementById("amount");
+	//найти элементы ввода и вывода в документе и вернуть ссылку на эл-т по его id
+	var amount = document.getElementById("amount"); 
 	var apr = document.getElementById("apr");
 	var years = document.getElementById("years");
 	var payment = document.getElementById("payment");
@@ -38,6 +38,7 @@ function calculate() {
 		//данные получены некорректно 
 		payment.innerHTML = ""; //стереть содержимое этих элементов
 		totalinterest.innerHTML = "";
+
 	}
 }
 //сохранить ввод поль-ля в св-вах объекта localStorage
@@ -47,6 +48,7 @@ function save(amount,apr, years) {
 		localStorage.loan_amount = amount;
 		localStorage.loan_apr = apr;
 		localStorage.loan_years = years;
+
 	}
 }
 //автоматически восстановить поля ввода при загрузке документа
@@ -56,11 +58,21 @@ window.onload = function() {
 		document.getElementById("amount").value = localStorage.loan_amount; //сумма кред
 		document.getElementById("apr").value = localStorage.loan_apr; //проц ставка
 		document.getElementById("years").value = localStorage.loan_years; //срок кредита
+		document.getElementById("payment").value = localStorage.loan_payment;
+		document.getElementById("totalinterest").value = localStorage.loan_totalinterest;
 
 	}
 };
-//передать ввод пользователя серверному сцен кот может возвращать
-//список ссылок
+
+//var str = 'Lorem ipsum 234456234 Lorem ipsum 7345287346 asdfae';
+//str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+
+/*$(function () {
+  $('.cost').each(function () {
+    $(this).text($(this).text().replace(/^\s*(\d+)(\d{3})\s*([а-я\.]+)?\s*$/, '$1 $2 $3'));
+  });
+});*/
+
 
 
 
